@@ -1,40 +1,31 @@
 /* Google fonts import */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
-
-    /* border-box tells the browser to account for any border and padding 
-    in the values you specify for an element's width and height. */
     box-sizing: border-box;
 }
 
-
-
 /* General styles */
-
 body {
-
-    /* body takes up 100% of the viewport height*/
     min-height: 100vh;
-
-    /* initiating flexbox for the body */
     display: flex;
-
-    /* Child Elemnts of body are arranged along the vertical axis */
     flex-direction: column;
-
     /* Generic project styles */
     color: #3a3a3a;
-
-    font-family: 'lato', 'sans-serif';
+    font-family: 'Lato', sans-serif;
 }
 
-
-
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
 
 /* Header */
 header {
@@ -52,14 +43,6 @@ header {
 header a {
     text-decoration: none;
     color: inherit;
-
-}
-
-h1 {
-    font-family: 'oswald', 'sans-seriv';
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
 }
 
 #menu {
@@ -76,7 +59,7 @@ h1 {
     border-bottom: 1px solid #3a3a3a;
 }
 
-/* Navbar styles with dropdown toggle*/
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -90,33 +73,47 @@ nav {
 
 /* Nav toggle */
 #nav-toggle:checked~nav {
-    display: block
+    display: block;
 }
 
 #nav-toggle {
     display: none;
-
 }
 
 .nav-toggle-label {
-     font-size: 2 rem;
+    font-size: 2rem;
 }
 
 /* Main content */
 main {
-
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
-/* Hero Section*/
-
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
-    background: url(../images/hero-image.webp) no-repeat center center/cover;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+}
 
+#cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff;
 }
 
 /* Footer */
@@ -126,7 +123,6 @@ main {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-
 }
 
 #social-networks i {
@@ -135,11 +131,10 @@ main {
     color: #3a3a3a;
 }
 
-/* Media query: tablets and lagers (768 px and up)*/
-
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
-    /*header*/
+    /* Header */
     nav {
         display: block;
         position: relative;
@@ -148,34 +143,40 @@ main {
         padding-right: 1rem;
     }
 
-        #menu {
-            display: flex;
-        }
-    
-        #menu>li {
-            padding-left: 1rem;
-        }
-
-        #logo {
-            font-size: 280%;
-            line-height: 75px;
-            margin: 0 0.5rem;
-        }
-
-        /* Main Content */
-
-        main {
-            /* Push main content down to accomodate  larger header */
-            margin-top: 79px;
-        }
-
-}
-
-/* Media query: tablets and lagers (768 px and up)*/
-
-@media screen and (min-width: 992px) {
-    #menu a:hover{
-        border-bottom: 1px solid #3a3a3a;
+    #menu {
+        display: flex;
     }
 
+    #menu>li {
+        padding-left: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+
+    /* Hero image */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover {
+        border-bottom: 1px solid #3a3a3a;
+    }
 }
