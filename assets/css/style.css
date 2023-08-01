@@ -116,8 +116,9 @@ main {
     color: #ffffff;
 }
 
+/* Reasons Section */
+
 #reasons {
-    background-color: aqua;
     width: 90%;
     margin: auto;
     margin-top: 20px;
@@ -144,6 +145,11 @@ main {
     line-height: 20px;
     margin-bottom: 20px;
 
+}
+
+hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px  0;
 }
 
 /* Footer */
