@@ -116,6 +116,10 @@ main {
     color: #ffffff;
 }
 
+#reasons {
+    background-color: aqua;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
