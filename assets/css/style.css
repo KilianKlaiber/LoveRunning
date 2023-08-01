@@ -124,6 +124,11 @@ main {
     margin-bottom: 20px;
 }
 
+#reasons > h2 {
+    width: 280%;
+    margin-bottom: 20px;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
